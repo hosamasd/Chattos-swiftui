@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E01A790258A517B00119871 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01A78F258A517B00119871 /* RegisterView.swift */; };
+		4E01A793258A525400119871 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01A792258A525400119871 /* RegisterViewModel.swift */; };
+		4E01A796258A53DF00119871 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01A795258A53DF00119871 /* ImagePicker.swift */; };
 		4E5404B1258A3CD500974862 /* ChattosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5404B0258A3CD500974862 /* ChattosApp.swift */; };
 		4E5404B3258A3CD500974862 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5404B2258A3CD500974862 /* ContentView.swift */; };
 		4E5404B5258A3CD600974862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5404B4258A3CD600974862 /* Assets.xcassets */; };
 		4E5404B8258A3CD600974862 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5404B7258A3CD600974862 /* Preview Assets.xcassets */; };
+		4E5404C7258A3D0C00974862 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5404C6258A3D0C00974862 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E01A78F258A517B00119871 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		4E01A792258A525400119871 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		4E01A795258A53DF00119871 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4E5404AD258A3CD500974862 /* Chattos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chattos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5404B0258A3CD500974862 /* ChattosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattosApp.swift; sourceTree = "<group>"; };
 		4E5404B2258A3CD500974862 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4E5404B4258A3CD600974862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E5404B7258A3CD600974862 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E5404B9258A3CD600974862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E5404C6258A3D0C00974862 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				4E5404B0258A3CD500974862 /* ChattosApp.swift */,
-				4E5404B2258A3CD500974862 /* ContentView.swift */,
+				4E5404C5258A3CF900974862 /* viewmodel */,
+				4E5404C4258A3CF400974862 /* model */,
+				4E5404C3258A3CEE00974862 /* view */,
+				4E5404C0258A3CE200974862 /* scenes */,
 				4E5404B4258A3CD600974862 /* Assets.xcassets */,
 				4E5404B9258A3CD600974862 /* Info.plist */,
 				4E5404B6258A3CD600974862 /* Preview Content */,
@@ -67,6 +78,39 @@
 				4E5404B7258A3CD600974862 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4E5404C0258A3CE200974862 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4E5404B2258A3CD500974862 /* ContentView.swift */,
+				4E5404C6258A3D0C00974862 /* Home.swift */,
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
+		4E5404C3258A3CEE00974862 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4E01A78F258A517B00119871 /* RegisterView.swift */,
+				4E01A795258A53DF00119871 /* ImagePicker.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E5404C4258A3CF400974862 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E5404C5258A3CF900974862 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				4E01A792258A525400119871 /* RegisterViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5404B3258A3CD500974862 /* ContentView.swift in Sources */,
+				4E01A793258A525400119871 /* RegisterViewModel.swift in Sources */,
+				4E01A790258A517B00119871 /* RegisterView.swift in Sources */,
+				4E01A796258A53DF00119871 /* ImagePicker.swift in Sources */,
+				4E5404C7258A3D0C00974862 /* Home.swift in Sources */,
 				4E5404B1258A3CD500974862 /* ChattosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
