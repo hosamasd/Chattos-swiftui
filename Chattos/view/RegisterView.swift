@@ -73,17 +73,26 @@ struct RegisterView: View {
             .padding(.horizontal)
             .padding(.bottom)
             
-            Button(action: registerData.register, label: {
-                Text("Register")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding(.vertical)
-                    .frame(width: UIScreen.main.bounds.width - 100)
-                    .background(Color("blue"))
-                    .clipShape(Capsule())
-            })
-            .disabled(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false)
-            .opacity(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1)
+            if registerData.isLoading{
+                
+                ProgressView()
+                    .padding()
+            }
+            else {
+            
+                Button(action: registerData.register, label: {
+                    Text("Register")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .padding(.vertical)
+                        .frame(width: UIScreen.main.bounds.width - 100)
+                        .background(Color("blue"))
+                        .clipShape(Capsule())
+                })
+                .disabled(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false)
+                .opacity(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1)
+                
+            }
             
             Spacer(minLength: 0)
             

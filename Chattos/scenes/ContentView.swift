@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView{
-            RegisterView()
+            Home()
+//            RegisterView()
                 .preferredColorScheme(.dark)
                 .navigationBarHidden(true)
         }
