@@ -18,10 +18,17 @@ class RegisterViewModel : ObservableObject{
     // Loading View...
     @Published var isLoading = false
     @AppStorage("current_status") var status = false
+    @AppStorage("after_log_signuup") var logOrSignup = false
+    @AppStorage("log_Status") var logins = false
+
     
     func register(){
         
         isLoading = true
+        // success means settings status as true...
+                       self.status = true
+        self.logOrSignup=false
+        self.logins=true
         // setting User Data To Firestore....
         
 //        let uid = Auth.auth().currentUser!.uid

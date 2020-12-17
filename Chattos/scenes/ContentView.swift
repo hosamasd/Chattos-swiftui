@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("current_status") var status = false
+    @AppStorage("log_Status") var logins = false
+    @AppStorage("after_log_signuup") var logOrSignup = false
+
+    @StateObject var model = ModelData()
+
     var body: some View {
-        NavigationView{
-            Home()
-//            RegisterView()
-                .preferredColorScheme(.dark)
-                .navigationBarHidden(true)
-        }
+        
+        SignUpView(model: model)
+//        NavigationView{
+//            VStack{
+//
+//                if logOrSignup {
+//                    if  logins{Home()}
+//                    else {
+//                        RegisterView()
+//                    }
+//                }else {
+//                    LoginView(model:model)}
+//            }
+//                .preferredColorScheme(.dark)
+//                .navigationBarHidden(true)
+//        }
     }
 }
 
