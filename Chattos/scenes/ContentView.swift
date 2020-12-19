@@ -16,7 +16,8 @@ struct ContentView: View {
     @StateObject var model = ModelData()
 
     var body: some View {
-        Home()
+        HomeChat()
+//        Home()
 //        SignUpView(model: model)
 //        NavigationView{
 //            Home()
