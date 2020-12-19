@@ -6,15 +6,14 @@
 //
 
 import SwiftUI
-//import SDWebImageSwiftUI
-//import Firebase
+import SDWebImageSwiftUI
+import Firebase
 
 struct PostRow: View {
     
     var post : PostModel
     @ObservedObject var postData : PostViewModel
-//    let uid = Auth.auth().currentUser!.uid
-    let uid = ""
+    let uid = Auth.auth().currentUser!.uid
     
     var body: some View {
         
@@ -22,8 +21,8 @@ struct PostRow: View {
             
             HStack(spacing: 10){
                 
-                Image(systemName:"tray.and.arrow.down.fill")
-//                WebImage(url: URL(string: post.user.pic)!)
+//                Image(systemName:"tray.and.arrow.down.fill")
+                WebImage(url: URL(string: post.user.pic)!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)
@@ -64,8 +63,8 @@ struct PostRow: View {
             
             if post.pic != ""{
                 
-                Image(systemName:"tray.and.arrow.down.fill")
-//                WebImage(url: URL(string: post.pic)!)
+//                Image(systemName:"tray.and.arrow.down.fill")
+                WebImage(url: URL(string: post.pic)!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: UIScreen.main.bounds.width - 60, height: 250)

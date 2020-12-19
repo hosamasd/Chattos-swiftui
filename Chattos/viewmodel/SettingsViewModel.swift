@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-//import Firebase
+import Firebase
 
 class SettingsViewModel : ObservableObject{
     
-//    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
-    @Published var userInfo = UserModel(username: "hosam mohamed", pic: "", bio: "ios developer", uid: "")
+    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
+//    @Published var userInfo = UserModel(username: "hosam mohamed", pic: "", bio: "ios developer", uid: "")
     //status for register
     @AppStorage("current_status") var status = false
     @AppStorage("log_Status") var logins = false
@@ -26,14 +26,14 @@ class SettingsViewModel : ObservableObject{
     
     
     
-//    let ref = Firestore.firestore()
-//    let uid = Auth.auth().currentUser!.uid
+    let ref = Firestore.firestore()
+    let uid = Auth.auth().currentUser!.uid
     
     init() {
 
-//        fetchUser(uid: uid) { (user) in
-//            self.userInfo = user
-//        }
+        fetchUser(uid: uid) { (user) in
+            self.userInfo = user
+        }
     }
 //
 //
@@ -41,7 +41,7 @@ class SettingsViewModel : ObservableObject{
 //
 //        // logging out..
 //
-//        try! Auth.auth().signOut()
+        try! Auth.auth().signOut()
         status = false
         logOrSignup=false
         logins=false
@@ -49,22 +49,22 @@ class SettingsViewModel : ObservableObject{
 //
     func updateImage(){
 //
-//        isLoading = true
+        isLoading = true
 //
         UploadImage(imageData: img_data, path: "profile_Photos") { (url) in
 //
-//            self.ref.collection("Users").document(self.uid).updateData([
-//
-//                "imageurl": url,
-//            ]) { (err) in
-//                if err != nil{return}
-//
-//                // Updating View..
-//                self.isLoading = false
-//                fetchUser(uid: self.uid) { (user) in
-//                    self.userInfo = user
-//                }
-//            }
+            self.ref.collection("Users").document(self.uid).updateData([
+
+                "imageurl": url,
+            ]) { (err) in
+                if err != nil{return}
+
+                // Updating View..
+                self.isLoading = false
+                fetchUser(uid: self.uid) { (user) in
+                    self.userInfo = user
+                }
+            }
         }
     }
 //
@@ -81,18 +81,18 @@ class SettingsViewModel : ObservableObject{
 //
     func updateBio(id: String,value: String){
 //
-//        ref.collection("Users").document(uid).updateData([
-//
-//            id: value,
-//        ]) { (err) in
-//
-//            if err != nil{return}
-//
-//            // refreshing View...
-//
-//            fetchUser(uid: self.uid) { (user) in
-//                self.userInfo = user
-//            }
-//        }
+        ref.collection("Users").document(uid).updateData([
+
+            id: value,
+        ]) { (err) in
+
+            if err != nil{return}
+
+            // refreshing View...
+
+            fetchUser(uid: self.uid) { (user) in
+                self.userInfo = user
+            }
+        }
     }
 }

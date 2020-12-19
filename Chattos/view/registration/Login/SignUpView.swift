@@ -58,7 +58,7 @@ struct SignUpView : View {
                 
                 VStack(spacing: 20){
                     
-                    CustomTextField(image: "person", placeHolder: "Email", txt: $model.email_SignUp)
+                    CustomTextField(image: "person", placeHolder: "Email", txt: $model.email_SignUp,type:.emailAddress)
                     
                     CustomTextField(image: "lock", placeHolder: "Password", txt: $model.password_SignUp)
                     

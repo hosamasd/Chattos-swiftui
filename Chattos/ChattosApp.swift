@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct ChattosApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -17,9 +22,21 @@ struct ChattosApp: App {
     }
 }
 
+class AppDelegate : NSObject,UIApplicationDelegate{
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        FirebaseApp.configure()
+        return true
+    }
+}
+
 //hide keyboard when tap around
 
 extension UIApplication {
+    
+    
+    
     func addTapGestureRecognizer() {
         guard let window = windows.first else { return }
         let tapGesture = UITapGestureRecognizer(target: window, action: #selector(UIView.endEditing))

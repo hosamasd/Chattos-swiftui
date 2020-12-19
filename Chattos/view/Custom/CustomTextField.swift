@@ -11,7 +11,7 @@ struct CustomTextField : View {
     
     var image : String
     var placeHolder : String
-    
+    @State var showOrHide = false
     
     @Binding var txt : String
     var type:UIKeyboardType = .default
@@ -20,17 +20,34 @@ struct CustomTextField : View {
         
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
             
+            Button(action: {
+                self.showOrHide.toggle()
+                print(123)
+            }, label: {
+               
+            
+            
             Image(systemName: image)
                 .font(.system(size: 24))
                 .foregroundColor(Color("bottom"))
                 .frame(width: 60, height: 60)
                 .background(Color.white)
                 .clipShape(Circle())
+                
+            })
             
             ZStack{
                 
                 if placeHolder == "Password" || placeHolder == "Re-Enter"{
-                    SecureField(placeHolder, text: $txt)
+                    ZStack {
+                        if showOrHide{
+                            TextField(placeHolder, text: $txt)
+                        }else {
+                            SecureField(placeHolder, text: $txt)
+                        }
+                    }
+                    
+                    
                 }
                 else{
                     TextField(placeHolder, text: $txt)
@@ -44,6 +61,7 @@ struct CustomTextField : View {
                 .clipShape(Capsule())
         }
         .padding(.horizontal)
+       
     }
 }
 

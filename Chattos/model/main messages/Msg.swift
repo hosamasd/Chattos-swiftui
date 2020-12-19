@@ -34,7 +34,7 @@ var data = [
     
     Msg(name: "Emily", msg: "Hello!!!", date: "25/03/20",img: "person.circle"),
     Msg(name: "Jonh", msg: "How Are You ???", date: "22/03/20",img: "person.circle.fill"),
-    Msg( name: "Catherine", msg: "New Tutorial From Kavsoft", date: "20/03/20",img: "p3"),
+    Msg( name: "Catherine", msg: "New Tutorial From Kavsoft", date: "20/03/20",img: "person.crop.square.fill"),
     Msg( name: "Emma", msg: "Hey Everyone", date: "25/03/20",img: "person.and.arrow.left.and.arrow.right"),
     Msg(name: "Lina", msg: "SwiftUI Tutorials", date: "25/03/20",img: "person.2.circle"),
     Msg( name: "Steve Jobs", msg: "New Apple iPhone", date: "15/03/20",img: "person.crop.circle.fill.badge.plus"),

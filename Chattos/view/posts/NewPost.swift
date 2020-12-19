@@ -60,15 +60,6 @@ struct NewPost: View {
             .opacity(newPostData.isPosting ? 0.5 : 1)
             .disabled(newPostData.isPosting ? true : false)
             
-           
-            
-        
-            
-//            TextArea("This is my placeholder", text: $newPostData.postTxt)
-//                .cornerRadius(15)
-//                .padding()
-//                .opacity(newPostData.isPosting ? 0.25 : 1)
-//                .disabled(newPostData.isPosting ? true : false)
 ////
             TextEditor(text: $newPostData.postTxt)
                 .cornerRadius(15)

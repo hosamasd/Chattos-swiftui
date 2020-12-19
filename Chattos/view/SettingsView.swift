@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//import SDWebImageSwiftUI
+import SDWebImageSwiftUI
 
 struct SettingsView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
@@ -32,12 +32,12 @@ struct SettingsView: View {
             .background(Color("bg"))
             .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
 //
-//            if settingsData.userInfo.pic != ""{
+            if settingsData.userInfo.pic != ""{
 //
                 ZStack{
 
-                    Image(systemName: "person")
-//                    WebImage(url: URL(string: settingsData.userInfo.pic)!)
+//                    Image(systemName: "person")
+                    WebImage(url: URL(string: settingsData.userInfo.pic)!)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 125, height: 125)
@@ -53,7 +53,7 @@ struct SettingsView: View {
                 .onTapGesture {
                     settingsData.picker.toggle()
                 }
-            
+            }
 //
             HStack(spacing: 15){
 

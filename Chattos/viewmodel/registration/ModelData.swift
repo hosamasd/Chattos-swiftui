@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 class ModelData : ObservableObject {
     
@@ -74,23 +75,23 @@ class ModelData : ObservableObject {
                     self.isLoading.toggle()
                 }
                 
-//                Auth.auth().sendPasswordReset(withEmail: alert.textFields![0].text!) { (err) in
-//
-//                    withAnimation{
-//
-//                        self.isLoading.toggle()
-//                    }
-//
-//                    if err != nil{
-//                        self.alertMsg = err!.localizedDescription
-//                        self.alert.toggle()
-//                        return
-//                    }
-//
-//                    // ALerting User...
-//                    self.alertMsg = "Password Reset Link Has Been Sent !!!"
-//                    self.alert.toggle()
-//                }
+                Auth.auth().sendPasswordReset(withEmail: alert.textFields![0].text!) { (err) in
+
+                    withAnimation{
+
+                        self.isLoading.toggle()
+                    }
+
+                    if err != nil{
+                        self.alertMsg = err!.localizedDescription
+                        self.alert.toggle()
+                        return
+                    }
+
+                    // ALerting User...
+                    self.alertMsg = "Password Reset Link Has Been Sent !!!"
+                    self.alert.toggle()
+                }
             }
         }
         
@@ -119,37 +120,37 @@ class ModelData : ObservableObject {
         
         withAnimation{
             
-//            self.isLoading.toggle()
+            self.isLoading.toggle()
         }
         
-//        Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
-//
-//            withAnimation{
-//
-//                self.isLoading.toggle()
-//            }
-//
-//            if err != nil{
-//
-//                self.alertMsg = err!.localizedDescription
-//                self.alert.toggle()
-//                return
-//            }
-//
-//            // checking if user is verifed or not...
-//            // if not verified means lgging out...
-//
-//            let user = Auth.auth().currentUser
-//
-//            if !user!.isEmailVerified{
-//
-//                self.alertMsg = "Please Verify Email Address!!!"
-//                self.alert.toggle()
-//                // logging out...
-//                try! Auth.auth().signOut()
-//
-//                return
-//            }
+        Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+
+            withAnimation{
+
+                self.isLoading.toggle()
+            }
+
+            if err != nil{
+
+                self.alertMsg = err!.localizedDescription
+                self.alert.toggle()
+                return
+            }
+
+            // checking if user is verifed or not...
+            // if not verified means lgging out...
+
+            let user = Auth.auth().currentUser
+
+            if !user!.isEmailVerified{
+
+                self.alertMsg = "Please Verify Email Address!!!"
+                self.alert.toggle()
+                // logging out...
+                try! Auth.auth().signOut()
+
+                return
+            }
 //
 //            // setting user status as true....
 //
@@ -157,7 +158,7 @@ class ModelData : ObservableObject {
 
                 self.logOrSignup = true
             }
-//        }
+        }
     }
     
     // SignUp..
@@ -183,24 +184,24 @@ class ModelData : ObservableObject {
         withAnimation{
             
             
-//            self.isLoading.toggle()
+            self.isLoading.toggle()
         }
         
-//        Auth.auth().createUser(withEmail: email_SignUp, password: password_SignUp) { (result, err) in
-//
-//            withAnimation{
-//
-//                self.isLoading.toggle()
-//            }
-//
-//            if err != nil{
-//                self.alertMsg = err!.localizedDescription
-//                self.alert.toggle()
-//                return
-//            }
-//
-//            // sending Verifcation Link....
-//
+        Auth.auth().createUser(withEmail: email_SignUp, password: password_SignUp) { (result, err) in
+
+            withAnimation{
+
+                self.isLoading.toggle()
+            }
+
+            if err != nil{
+                self.alertMsg = err!.localizedDescription
+                self.alert.toggle()
+                return
+            }
+
+            // sending Verifcation Link....
+
 //            result?.user.sendEmailVerification(completion: { (err) in
 //
 //                if err != nil{
@@ -219,14 +220,14 @@ class ModelData : ObservableObject {
 
             self.logOrSignup = true
         }
-//        }
+        }
     }
     
     // log Out...
     
     func logOut(){
         
-//        try! Auth.auth().signOut()
+        try! Auth.auth().signOut()
         
         withAnimation{
             
