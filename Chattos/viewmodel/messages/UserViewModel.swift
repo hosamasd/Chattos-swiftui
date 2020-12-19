@@ -36,14 +36,14 @@ class UserViewModel: ObservableObject {
     Msg( name: "Kavuya", msg: "New Tutorial From Kavsoft", date: "20/03/20",img: "person.crop.square.fill"),
 ]
     
-    func makeSearch(txt:String)  {
+    func makeSearch(txt:String) ->[Msg] {
         
         // filterting Data...
         if txt != ""{
-            self.filtered = messages.filter{$0.name.lowercased().contains(txt.lowercased())}
+           return messages.filter{$0.name.lowercased().contains(txt.lowercased())}
         }
         else{
-            self.filtered = messages
+            return messages
         }
     }
         }

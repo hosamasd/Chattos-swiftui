@@ -16,23 +16,23 @@ struct ContentView: View {
     @StateObject var model = ModelData()
 
     var body: some View {
-        
+        Home()
 //        SignUpView(model: model)
-        NavigationView{
-            Home()
-//            VStack{
-//
-//                if logOrSignup {
-//                    if  logins{Home()}
-//                    else {
-//                        BasicInfoView()
-//                    }
-//                }else {
-//                    LoginView(model:model)}
-//            }
-//                .preferredColorScheme(.dark)
-                .navigationBarHidden(true)
-        }
+//        NavigationView{
+//            Home()
+////            VStack{
+////
+////                if logOrSignup {
+////                    if  logins{Home()}
+////                    else {
+////                        BasicInfoView()
+////                    }
+////                }else {
+////                    LoginView(model:model)}
+////            }
+////                .preferredColorScheme(.dark)
+//                .navigationBarHidden(true)
+//        }
     }
 }
 

@@ -11,7 +11,7 @@ struct Home: View {
     
     @State var index = 0
     @State var expand = false
-    @State var selectedTab = "Posts"
+    @State var selectedTab = "Settingss"
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {
@@ -21,12 +21,14 @@ struct Home: View {
             
             ZStack{
                 
+                SecondChats(expand: self.$expand).opacity(selectedTab == "Settingss" ? 1 : 0)
+                
                 PostView()
                     .opacity(selectedTab == "Posts" ? 1 : 0)
                 
 //                Chats(expand: self.$expand).opacity(selectedTab == "Settingss" ? 1 : 0)
 
-                SecondChats(expand: self.$expand).opacity(selectedTab == "Settingss" ? 1 : 0)
+//                SecondChats(expand: self.$expand).opacity(selectedTab == "Settingss" ? 1 : 0)
 
                 
                 SettingsView()

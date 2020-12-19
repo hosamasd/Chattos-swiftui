@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct Chats: View {
-   
+    
     @Binding var expand : Bool
     @StateObject var messagesVM = UserViewModel()
+    @State var filteredItems:[Msg] = data
 
+    @State var text = ""
+    
     var body : some View{
         
         VStack(spacing: 0){
             
-            TopView(expand: self.$expand, messages: $messagesVM.messages).zIndex(25)
+            TopView(text:$text, expand: self.$expand, messages: $messagesVM.messages).zIndex(25)
             
-            Centerview(expand: self.$expand, messages: $messagesVM.messages).offset(y: -25)
+            Centerview(expand: self.$expand, messages: $filteredItems).offset(y: -25)
         }
     }
     

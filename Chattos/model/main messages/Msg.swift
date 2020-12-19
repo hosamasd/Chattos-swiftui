@@ -15,6 +15,19 @@ struct Msg : Identifiable,Hashable {
     var msg : String
     var date : String
     var img : String
+    var offset : CGFloat = 0.0
+    var isSwiped: Bool = false
+
+}
+
+struct MsgTwos : Identifiable,Hashable {
+    var id = UUID().uuidString
+
+//    var id : Int
+    var name : String
+    var msg : String
+    var date : String
+    var img : String
 }
 
 var data = [

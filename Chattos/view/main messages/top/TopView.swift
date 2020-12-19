@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TopView: View {
     
-    @State var search = ""
+    @Binding var text: String
+    
+       @State private var isEditing = false
     @Binding var expand : Bool
     @State var colums = Array(repeating: GridItem(.flexible(), spacing: 15), count: 1)
 //@StateObject var messagesVM = UserViewModel()
@@ -77,21 +79,27 @@ struct TopView: View {
                 
             }
             
-            HStack(spacing: 15){
-                
-                Image(systemName: "magnifyingglass")
-                    .resizable()
-                    .frame(width: 18, height: 18)
-                    .foregroundColor(Color.black.opacity(0.3))
-                
-                TextField("Search", text: self.$search)
-                
-            }.padding()
-            .background(Color.white)
-            .cornerRadius(8)
-            .padding(.bottom, 10)
+          SearchBar(text: $text)
+//            .padding()
+//                        .background(Color.white)
+                        .cornerRadius(8)
+//                        .padding(.bottom, 10)
+//            HStack(spacing: 15){
+//
+//                Image(systemName: "magnifyingglass")
+//                    .resizable()
+//                    .frame(width: 18, height: 18)
+//                    .foregroundColor(Color.black.opacity(0.3))
+//
+//                TextField("Search", text: self.$search)
+//
+//            }.padding()
+//            .background(Color.white)
+//            .cornerRadius(8)
+//            .padding(.bottom, 10)
             
-        }.padding()
+        }
+        .padding()
         .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
         .background(Color("Color1"))
         .clipShape(shape())

@@ -11,35 +11,33 @@ struct Centerview : View {
     
     @Binding var expand : Bool
     @Binding var messages:[Msg]
-    
+//    @ObservedObject var messagesVM = UserViewModel()
+
     var body : some View{
         
+        ScrollView{
         
-        
-        List(messages){i in
-            
-            if i.name == "Emily"{
+            VStack(spacing:15) {
                 
-                cellView(data : i)
-                .onAppear {
-                        
-                    self.expand = true
+                ForEach(messages) {app in
+//                    SecondcellView(data: $messagesVM.messages[getIndex(item: app)])
+                    cellView(data : app)
                 }
-                .onDisappear {
-                    
-                    self.expand = false
-                }
-            }
-            else{
                 
-                cellView(data : i)
             }
-            
+            .padding()
         }
-        .padding(.top, 20)
+//        .padding(.top, 20)
         .background(Color.white)
-        .clipShape(shape())
+        
     }
+    
+//    func getIndex(item: Msg)->Int{
+//        
+//        return messagesVM.messages.firstIndex { (item1) -> Bool in
+//            return item.id == item1.id
+//        } ?? 0
+//    }
 
 }
 

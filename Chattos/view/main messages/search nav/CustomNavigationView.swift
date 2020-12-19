@@ -50,7 +50,7 @@ struct CustomNavigationView: UIViewControllerRepresentable {
         
         // Nav Bar Data...
         
-//        controller.navigationBar.topItem?.title = title
+        controller.navigationBar.topItem?.title = title
 //        controller.navigationBar.topItem?.titleView=titleView
         controller.navigationBar.prefersLargeTitles = largeTitle
         
