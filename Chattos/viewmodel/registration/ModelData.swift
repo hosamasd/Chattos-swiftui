@@ -119,7 +119,7 @@ class ModelData : ObservableObject {
         
         withAnimation{
             
-            self.isLoading.toggle()
+//            self.isLoading.toggle()
         }
         
 //        Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
@@ -182,7 +182,8 @@ class ModelData : ObservableObject {
         
         withAnimation{
             
-            self.isLoading.toggle()
+            
+//            self.isLoading.toggle()
         }
         
 //        Auth.auth().createUser(withEmail: email_SignUp, password: password_SignUp) { (result, err) in
@@ -213,6 +214,11 @@ class ModelData : ObservableObject {
 //                self.alertMsg = "Email Verification Has Been Sent !!! Verify Your Email ID !!!"
 //                self.alert.toggle()
 //            })
+        
+        withAnimation{
+
+            self.logOrSignup = true
+        }
 //        }
     }
     

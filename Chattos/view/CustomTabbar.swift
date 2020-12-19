@@ -15,6 +15,8 @@ struct CustomTabbar: View {
             
             TabButton(title: "Posts", selectedTab: $selectedTab)
             
+            TabButton(title: "Settingss", selectedTab: $selectedTab)
+            
             TabButton(title: "Settings", selectedTab: $selectedTab)
         }
         .padding(.horizontal)

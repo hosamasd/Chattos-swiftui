@@ -12,7 +12,10 @@ class SettingsViewModel : ObservableObject{
     
 //    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
     @Published var userInfo = UserModel(username: "hosam mohamed", pic: "", bio: "ios developer", uid: "")
+    //status for register
     @AppStorage("current_status") var status = false
+    @AppStorage("log_Status") var logins = false
+    @AppStorage("after_log_signuup") var logOrSignup = false
     
     // Image Picker For Updating Image...
     @Published var picker = false
@@ -20,6 +23,8 @@ class SettingsViewModel : ObservableObject{
     
     // Loading View..
     @Published var isLoading = false
+    
+    
     
 //    let ref = Firestore.firestore()
 //    let uid = Auth.auth().currentUser!.uid
@@ -37,12 +42,14 @@ class SettingsViewModel : ObservableObject{
 //        // logging out..
 //
 //        try! Auth.auth().signOut()
-//        status = false
+        status = false
+        logOrSignup=false
+        logins=false
     }
 //
     func updateImage(){
 //
-        isLoading = true
+//        isLoading = true
 //
         UploadImage(imageData: img_data, path: "profile_Photos") { (url) in
 //

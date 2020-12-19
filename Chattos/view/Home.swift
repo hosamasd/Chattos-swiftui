@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Home: View {
     
+    @State var index = 0
+    @State var expand = false
     @State var selectedTab = "Posts"
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
@@ -21,6 +23,11 @@ struct Home: View {
                 
                 PostView()
                     .opacity(selectedTab == "Posts" ? 1 : 0)
+                
+//                Chats(expand: self.$expand).opacity(selectedTab == "Settingss" ? 1 : 0)
+
+                SecondChats(expand: self.$expand).opacity(selectedTab == "Settingss" ? 1 : 0)
+
                 
                 SettingsView()
                     .opacity(selectedTab == "Settings" ? 1 : 0)

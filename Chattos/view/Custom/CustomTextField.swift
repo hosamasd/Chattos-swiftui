@@ -11,7 +11,10 @@ struct CustomTextField : View {
     
     var image : String
     var placeHolder : String
+    
+    
     @Binding var txt : String
+    var type:UIKeyboardType = .default
     
     var body: some View{
         
@@ -31,6 +34,7 @@ struct CustomTextField : View {
                 }
                 else{
                     TextField(placeHolder, text: $txt)
+                        .keyboardType(type)
                 }
             }
                 .padding(.horizontal)

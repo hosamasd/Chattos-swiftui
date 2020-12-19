@@ -17,21 +17,22 @@ struct ContentView: View {
 
     var body: some View {
         
-        SignUpView(model: model)
-//        NavigationView{
+//        SignUpView(model: model)
+        NavigationView{
+            Home()
 //            VStack{
 //
 //                if logOrSignup {
 //                    if  logins{Home()}
 //                    else {
-//                        RegisterView()
+//                        BasicInfoView()
 //                    }
 //                }else {
 //                    LoginView(model:model)}
 //            }
 //                .preferredColorScheme(.dark)
-//                .navigationBarHidden(true)
-//        }
+                .navigationBarHidden(true)
+        }
     }
 }
 

@@ -15,6 +15,8 @@ struct LoginView : View {
         
         ZStack{
             
+            
+            
             VStack{
                 
                 Spacer(minLength: 0)
@@ -58,13 +60,18 @@ struct LoginView : View {
                 
                 VStack(spacing: 20){
                     
-                    CustomTextField(image: "person", placeHolder: "Email", txt: $model.email)
+                    CustomTextField(image: "person", placeHolder: "Email", txt: $model.email,type: .emailAddress)
+                        
+                    
                     
                     CustomTextField(image: "lock", placeHolder: "Password", txt: $model.password)
                 }
                 .padding(.top)
                 
-                Button(action: model.login) {
+                Button(action:
+                        model.login
+//                       self.hideKeyboard()
+                ) {
                     
                     Text("LOGIN")
                         .fontWeight(.bold)
@@ -73,6 +80,7 @@ struct LoginView : View {
                         .frame(width: UIScreen.main.bounds.width - 30)
                         .background(Color.white)
                         .clipShape(Capsule())
+                    
                 }
                 .padding(.top,22)
                 .disabled(!model.checkEmailAndPassword() ? true : false)
@@ -119,6 +127,7 @@ struct LoginView : View {
             
             Alert(title: Text("Message"), message: Text(model.alertMsg), dismissButton: .destructive(Text("Ok")))
         })
+        
     }
 }
 

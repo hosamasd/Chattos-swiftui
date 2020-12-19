@@ -24,7 +24,7 @@ class RegisterViewModel : ObservableObject{
     
     func register(){
         
-        isLoading = true
+//        isLoading = true
         // success means settings status as true...
                        self.status = true
         self.logOrSignup=false
@@ -54,6 +54,10 @@ class RegisterViewModel : ObservableObject{
 //                self.status = true
 //            }
 //        }
+        self.name = ""
+        self.bio = ""
+        self.image_Data = Data(count: 0)
+        self.picker = false
     }
     
     
