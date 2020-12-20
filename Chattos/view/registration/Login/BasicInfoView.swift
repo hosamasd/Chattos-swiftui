@@ -9,7 +9,9 @@ import SwiftUI
 
 struct BasicInfoView: View {
     
-    @StateObject var registerData = SecondRegisterViewModel()
+    @StateObject var registerData = RegisterViewModel()
+
+//    @StateObject var registerData = SecondRegisterViewModel()
 
     func withFrame(isFrame: Bool = false) -> some View {
         return    ZStack {

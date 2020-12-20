@@ -11,13 +11,14 @@
 		4E01A790258A517B00119871 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01A78F258A517B00119871 /* RegisterView.swift */; };
 		4E01A793258A525400119871 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01A792258A525400119871 /* RegisterViewModel.swift */; };
 		4E01A796258A53DF00119871 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01A795258A53DF00119871 /* ImagePicker.swift */; };
+		4E0BA9D7258F1F1700111095 /* UwerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0BA9D6258F1F1700111095 /* UwerRow.swift */; };
 		4E195C2B258DC8970081BC26 /* HomeMainMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C2A258DC8970081BC26 /* HomeMainMessages.swift */; };
 		4E195C2E258DC8C60081BC26 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C2D258DC8C60081BC26 /* Chats.swift */; };
 		4E195C31258DC9000081BC26 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C30258DC9000081BC26 /* Groups.swift */; };
 		4E195C34258DC9190081BC26 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C33258DC9190081BC26 /* TopView.swift */; };
 		4E195C37258DC9440081BC26 /* cellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C36258DC9440081BC26 /* cellView.swift */; };
 		4E195C3A258DC9620081BC26 /* shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C39258DC9620081BC26 /* shape.swift */; };
-		4E195C3E258DC9800081BC26 /* Msg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C3D258DC9800081BC26 /* Msg.swift */; };
+		4E195C3E258DC9800081BC26 /* MsgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C3D258DC9800081BC26 /* MsgModel.swift */; };
 		4E195C41258DCA0D0081BC26 /* Centerview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C40258DCA0D0081BC26 /* Centerview.swift */; };
 		4E195C4B258DD0460081BC26 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C4A258DD0460081BC26 /* UserViewModel.swift */; };
 		4E195C6B258DD84C0081BC26 /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195C6A258DD84C0081BC26 /* MainMessagesView.swift */; };
@@ -57,22 +58,23 @@
 		4ECF7405258DF2BB0091FF53 /* SecondcellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF7404258DF2BB0091FF53 /* SecondcellView.swift */; };
 		4EE9F05F258DFF1700B5A13D /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9F05D258DFF1700B5A13D /* ChatRow.swift */; };
 		4EE9F060258DFF1700B5A13D /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9F05E258DFF1700B5A13D /* ChatBubble.swift */; };
-		4EE9F066258DFF4D00B5A13D /* MsgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9F064258DFF4D00B5A13D /* MsgModel.swift */; };
 		4EE9F067258DFF4D00B5A13D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9F065258DFF4D00B5A13D /* HomeModel.swift */; };
 		4EE9F06A258DFFDF00B5A13D /* HomeChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9F069258DFFDF00B5A13D /* HomeChat.swift */; };
+		4EF3AD35258E437100539E3B /* SecondChatsss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3AD34258E437100539E3B /* SecondChatsss.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E01A78F258A517B00119871 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		4E01A792258A525400119871 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		4E01A795258A53DF00119871 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4E0BA9D6258F1F1700111095 /* UwerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UwerRow.swift; sourceTree = "<group>"; };
 		4E195C2A258DC8970081BC26 /* HomeMainMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainMessages.swift; sourceTree = "<group>"; };
 		4E195C2D258DC8C60081BC26 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
 		4E195C30258DC9000081BC26 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		4E195C33258DC9190081BC26 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		4E195C36258DC9440081BC26 /* cellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellView.swift; sourceTree = "<group>"; };
 		4E195C39258DC9620081BC26 /* shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shape.swift; sourceTree = "<group>"; };
-		4E195C3D258DC9800081BC26 /* Msg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Msg.swift; sourceTree = "<group>"; };
+		4E195C3D258DC9800081BC26 /* MsgModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MsgModel.swift; path = ../../MsgModel.swift; sourceTree = "<group>"; };
 		4E195C40258DCA0D0081BC26 /* Centerview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Centerview.swift; sourceTree = "<group>"; };
 		4E195C4A258DD0460081BC26 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		4E195C6A258DD84C0081BC26 /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
@@ -114,9 +116,9 @@
 		4ECF7404258DF2BB0091FF53 /* SecondcellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondcellView.swift; sourceTree = "<group>"; };
 		4EE9F05D258DFF1700B5A13D /* ChatRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
 		4EE9F05E258DFF1700B5A13D /* ChatBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
-		4EE9F064258DFF4D00B5A13D /* MsgModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgModel.swift; sourceTree = "<group>"; };
 		4EE9F065258DFF4D00B5A13D /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		4EE9F069258DFFDF00B5A13D /* HomeChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChat.swift; sourceTree = "<group>"; };
+		4EF3AD34258E437100539E3B /* SecondChatsss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChatsss.swift; sourceTree = "<group>"; };
 		599BED92E19165FB4CE41F97 /* Pods-Chattos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chattos.release.xcconfig"; path = "Target Support Files/Pods-Chattos/Pods-Chattos.release.xcconfig"; sourceTree = "<group>"; };
 		C2CB2B49587EC41A4647A774 /* Pods-Chattos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chattos.debug.xcconfig"; path = "Target Support Files/Pods-Chattos/Pods-Chattos.debug.xcconfig"; sourceTree = "<group>"; };
 		CE10BF68BF82ED050739F844 /* Pods_Chattos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chattos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				4EE9F062258DFF3600B5A13D /* chat messages */,
-				4E195C3D258DC9800081BC26 /* Msg.swift */,
 			);
 			path = "main messages";
 			sourceTree = "<group>";
@@ -185,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4E195C74258DDA290081BC26 /* SecondChats.swift */,
+				4EF3AD34258E437100539E3B /* SecondChatsss.swift */,
 			);
 			path = two;
 			sourceTree = "<group>";
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				4E195C36258DC9440081BC26 /* cellView.swift */,
+				4E0BA9D6258F1F1700111095 /* UwerRow.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -424,7 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				4EE9F065258DFF4D00B5A13D /* HomeModel.swift */,
-				4EE9F064258DFF4D00B5A13D /* MsgModel.swift */,
+				4E195C3D258DC9800081BC26 /* MsgModel.swift */,
 			);
 			path = "global message";
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				4E195C31258DC9000081BC26 /* Groups.swift in Sources */,
 				4EB8AF92258B4F46006B004A /* Extensions.swift in Sources */,
 				4E70E705258B5F95008BBF88 /* extension_view.swift in Sources */,
+				4EF3AD35258E437100539E3B /* SecondChatsss.swift in Sources */,
 				4EB8AEDC258B266A006B004A /* UploadImage.swift in Sources */,
 				4EB8AEF3258B28A4006B004A /* CustomTabbar.swift in Sources */,
 				4E47C5B6258DB910001A39FC /* BasicInfoView.swift in Sources */,
@@ -589,12 +593,12 @@
 				4EB8AF06258B31DA006B004A /* NewPostModel.swift in Sources */,
 				4EB8AEE3258B27B6006B004A /* PostView.swift in Sources */,
 				4E195C2E258DC8C60081BC26 /* Chats.swift in Sources */,
+				4E0BA9D7258F1F1700111095 /* UwerRow.swift in Sources */,
 				4EB8AF57258B474D006B004A /* LoginView.swift in Sources */,
 				4E5404B1258A3CD500974862 /* ChattosApp.swift in Sources */,
 				4E195C70258DD8ED0081BC26 /* CustomNavigationView.swift in Sources */,
-				4E195C3E258DC9800081BC26 /* Msg.swift in Sources */,
+				4E195C3E258DC9800081BC26 /* MsgModel.swift in Sources */,
 				4EB8AEFE258B3117006B004A /* PostRow.swift in Sources */,
-				4EE9F066258DFF4D00B5A13D /* MsgModel.swift in Sources */,
 				4EB8AEED258B286C006B004A /* UserModel.swift in Sources */,
 				4ECF73FF258DEDDE0091FF53 /* SearchBar.swift in Sources */,
 				4E195C41258DCA0D0081BC26 /* Centerview.swift in Sources */,

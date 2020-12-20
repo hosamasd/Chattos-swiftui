@@ -1,41 +1,38 @@
 //
-//  cellView.swift
+//  UwerRow.swift
 //  Chattos
 //
-//  Created by hosam on 19/12/2020.
+//  Created by hosam on 20/12/2020.
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
-struct cellView: View {
-   
-    var data : MsgModel
+struct UwerRow: View {
+    
+    var data : UserModel
     
     var body : some View{
         
         HStack(spacing: 12){
             
-//            Image(systemName: data.img)
-            Image(data.user)
+            WebImage(url: URL(string:data.pic)!)
             .resizable()
             .frame(width: 55, height: 55)
             
             VStack(alignment: .leading, spacing: 12) {
             
-                Text(data.user)
+                Text(data.username)
                 
-                Text(data.msg).font(.caption)
+                Text(data.bio).font(.caption)
+                
+                Divider()
+                    .frame(height:2)
+                    .foregroundColor(.gray)
             }
             
             Spacer(minLength: 0)
             
-            VStack{
-                
-                Text(data.user)
-                
-                Spacer()
-            }
         }.padding(.vertical)
     }
-    
 }

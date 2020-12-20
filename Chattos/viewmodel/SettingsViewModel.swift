@@ -10,7 +10,7 @@ import Firebase
 
 class SettingsViewModel : ObservableObject{
     
-    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
+    @Published var userInfo = UserModel(username: "", pic: "", bio: "", id: "")
 //    @Published var userInfo = UserModel(username: "hosam mohamed", pic: "", bio: "ios developer", uid: "")
     //status for register
     @AppStorage("current_status") var status = false

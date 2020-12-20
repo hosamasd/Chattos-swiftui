@@ -36,7 +36,7 @@ struct PostRow: View {
                 
                 // displaying only posted user...
                 
-                if post.user.uid == uid{
+                if post.user.id == uid{
                     
                     Menu(content: {
                         

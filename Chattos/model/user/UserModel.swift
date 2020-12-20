@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct UserModel {
+struct UserModel:Identifiable {
     var username : String
     var pic : String
     var bio: String
-    var uid : String
+    var id: String
+
 }

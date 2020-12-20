@@ -9,26 +9,46 @@ import SwiftUI
 
 struct Centerview : View {
     
-    @Binding var expand : Bool
-    @Binding var messages:[Msg]
-//    @ObservedObject var messagesVM = UserViewModel()
+//    @Binding var expand : Bool
+//    @Binding var users:[UserModel]
+    @ObservedObject var messagesVM = UserViewModel()
 
     var body : some View{
+        
+        if messagesVM.users.isEmpty{
+
+            Spacer(minLength: 0)
+
+            if messagesVM.noUserss{
+
+                Text("No Users !!!")
+            }
+            else{
+
+                ProgressView()
+            }
+//
+            Spacer(minLength: 0)
+        }
+        else {
         
         ScrollView{
         
             VStack(spacing:15) {
                 
-                ForEach(messages) {app in
+                ForEach(messagesVM.filtered) {app in
+                    UwerRow(data: app)
 //                    SecondcellView(data: $messagesVM.messages[getIndex(item: app)])
-                    cellView(data : app)
+//                    cellView(data : app)
                 }
                 
             }
             .padding()
         }
+        
+        }
 //        .padding(.top, 20)
-        .background(Color.white)
+//        .background(Color.white)
         
     }
     

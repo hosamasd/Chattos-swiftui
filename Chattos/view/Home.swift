@@ -25,7 +25,8 @@ struct Home: View {
                 PostView()
                     .opacity(selectedTab == "Posts" ? 1 : 0)
                 
-                SecondChats(expand: self.$expand).opacity(selectedTab == "Message" ? 1 : 0)
+                SecondChatsss().opacity(selectedTab == "Message" ? 1 : 0)
+//                SecondChats()
                 
                
                 

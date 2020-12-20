@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct SecondChats: View {
-    @Binding var expand : Bool
+//    @Binding var expand : Bool
     
     @StateObject var messagesVM = UserViewModel()
-    @State var filteredItems:[Msg] = data
+
+//    @Binding var messagesVM: UserViewModel
+//    @State var filteredItems:[MsgModel] = data
 
     var body : some View{
         
             
-        CustomNavigationView(view: AnyView( Centerview(expand: self.$expand, messages: $filteredItems)), placeHolder: "Search Apps,Games", largeTitle: true, title: "Hosam Mohamed",
+        CustomNavigationView(view: AnyView( Centerview( messagesVM: messagesVM)), placeHolder: "Search name users", largeTitle: true, title: "Users",
                                  
                 onSearch: { (txt) in
 
                 // filterting Data...
                 if txt != ""{
-                    self.filteredItems = messagesVM.messages.filter{$0.name.lowercased().contains(txt.lowercased())}
+                    self.messagesVM.filtered = messagesVM.users.filter{$0.username.lowercased().contains(txt.lowercased())}
                 }
                 else{
-                    self.filteredItems = messagesVM.messages
+                    self.messagesVM.filtered = messagesVM.users
                 }
                 
             }, onCancel: {
                 // Do Your Own Code When Search And Canceled....
-                self.filteredItems = messagesVM.messages
+                self.messagesVM.filtered = messagesVM.users
                 
             })
 //        }
