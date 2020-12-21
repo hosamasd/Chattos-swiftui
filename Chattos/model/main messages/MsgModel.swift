@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestoreSwift
+import Firebase
 
 struct MsgModel : Codable,Identifiable,Hashable {
 
@@ -24,29 +25,28 @@ struct MsgModel : Codable,Identifiable,Hashable {
 
 }
 
-struct MsgTwos : Identifiable,Hashable {
-    var id = UUID().uuidString
-
-//    var id : Int
-    var name : String
-    var msg : String
-    var date : String
-    var img : String
+struct MessageModel:Hashable,Identifiable {
+    @DocumentID var id : String?
+    let text,fromId,toId,imageUrl,videoUrl,autoId:String
+    let timestamp:Double
+    let isFromCurrentUser:Bool
+     var width,height:Double?
+    
+    func checkPartnerId() -> String? {
+        return  fromId == Auth.auth().currentUser?.uid ?   toId :   fromId
+    }
+    init(dict: [String:Any]) {
+        self.text = dict["text"] as? String ?? ""
+        self.fromId = dict["fromId"] as? String ?? ""
+        self.toId = dict["toId"] as? String ?? ""
+        self.videoUrl = dict["videoUrl"] as? String ?? ""
+        self.imageUrl = dict["imageUrl"] as? String ?? ""
+         self.autoId = dict["autoId"] as? String ?? ""
+        self.timestamp = dict["timestamp"] as? Double ?? 0.0
+        self.width = dict["width"] as? Double
+        self.height = dict["height"] as? Double
+        
+        self.isFromCurrentUser = UserServices.shared.currentUserId == fromId
+    }
 }
 
-//var data = [
-//
-//    MsgModel(name: "Emily", msg: "Hello!!!", date: "25/03/20",img: "person.circle"),
-//    MsgModel(name: "Jonh", msg: "How Are You ???", date: "22/03/20",img: "person.circle.fill"),
-//    MsgModel( name: "Catherine", msg: "New Tutorial From Kavsoft", date: "20/03/20",img: "person.crop.square.fill"),
-//    MsgModel( name: "Emma", msg: "Hey Everyone", date: "25/03/20",img: "person.and.arrow.left.and.arrow.right"),
-//    MsgModel(name: "Lina", msg: "SwiftUI Tutorials", date: "25/03/20",img: "person.2.circle"),
-//    MsgModel( name: "Steve Jobs", msg: "New Apple iPhone", date: "15/03/20",img: "person.crop.circle.fill.badge.plus"),
-//    MsgModel( name: "Roy", msg: "Hey Guys!!!", date: "25/03/20",img: "person.crop.circle.badge.plus"),
-//    MsgModel( name: "Julia", msg: "Hello!!!", date: "25/03/20",img: "person.crop.circle"),
-//    MsgModel( name: "Watson", msg: "How Are You ???", date: "22/03/20",img: "person.2.circle.fill"),
-//    MsgModel( name: "Kavuya", msg: "New Tutorial From Kavsoft", date: "20/03/20",img: "person.crop.square.fill"),
-////    Msg(id: 10, name: "Julie", msg: "Hey Everyone", date: "25/03/20",img: "person.crop.circle.fill.badge.xmark"),
-////    Msg(id: 11, name: "Lisa", msg: "SwiftUI Tutorials", date: "25/03/20",img: "person.crop.circle.badge.questionmark"),
-//
-//]

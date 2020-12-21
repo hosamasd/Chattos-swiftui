@@ -37,7 +37,12 @@ struct Centerview : View {
             VStack(spacing:15) {
                 
                 ForEach(messagesVM.filtered) {app in
-                    UwerRow(data: app)
+                    
+                    NavigationLink(destination: HomeChat(targetUser: app)) {
+                        UwerRow(data: app)
+                    }
+//                    NavigationLink(<#T##title: StringProtocol##StringProtocol#>, destination: <#T##_#>)
+//                    UwerRow(data: app)
 //                    SecondcellView(data: $messagesVM.messages[getIndex(item: app)])
 //                    cellView(data : app)
                 }

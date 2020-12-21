@@ -15,7 +15,7 @@ struct CustomTabbar: View {
             
             TabButton(title: "Posts", selectedTab: $selectedTab)
             
-            TabButton(title: "Message", selectedTab: $selectedTab)
+//            TabButton(title: "Message", selectedTab: $selectedTab)
             
             TabButton(title: "Settings", selectedTab: $selectedTab)
         }

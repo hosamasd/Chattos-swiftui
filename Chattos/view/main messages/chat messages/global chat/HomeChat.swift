@@ -8,26 +8,33 @@
 import SwiftUI
 
 struct HomeChat: View {
-    @StateObject var homeData = HomeModel()
+    
+     var targetUser:UserModel
+    
+    @StateObject var homeData =  HomeModel()
     @AppStorage("current_user") var user = ""
     @State var scrolled = false
+    
+    
     
     var body: some View {
        
         VStack(spacing: 0){
             
-            HStack{
-                
-                Text("Global Chat")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
-                
-                Spacer(minLength: 0)
-            }
-            .padding()
-            .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
-            .background(Color("Colorsss"))
+//            HStack{
+//
+//                Spacer(minLength: 0)
+//
+//                Text("Global Chat")
+//                    .font(.title)
+//                    .fontWeight(.heavy)
+//                    .foregroundColor(.white)
+//
+//                Spacer(minLength: 0)
+//            }
+//            .padding()
+////            .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
+//            .background(Color("Colorsss"))
             
             ScrollViewReader{reader in
                 
@@ -68,7 +75,7 @@ struct HomeChat: View {
                 
                 if homeData.txt != ""{
                     
-                    Button(action: homeData.writeMsg, label: {
+                    Button(action: {  }, label: {
                         
                         Image(systemName: "paperplane.fill")
                             .font(.system(size: 22))
@@ -82,12 +89,15 @@ struct HomeChat: View {
             .animation(.default)
             .padding()
         }
-        
+        .navigationBarTitle("Global", displayMode: .inline)
+        .onAppear {
+            self.homeData.readAllMsgs(targetUser)
+        }
     }
 }
 
-struct HomeChat_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeChat()
-    }
-}
+//struct HomeChat_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeChat()
+//    }
+//}

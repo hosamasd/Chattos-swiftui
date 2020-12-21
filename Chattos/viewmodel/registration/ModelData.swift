@@ -25,12 +25,15 @@ class ModelData : ObservableObject {
     @Published var alertMsg = ""
     
     // User Status....
-    
+    @AppStorage("email") var emails = ""
+    @AppStorage("password") var passwords = ""
+
     @AppStorage("log_Status") var status = false
     
     // User choose bio and type name
     
     @AppStorage("after_log_signuup") var logOrSignup = false
+    @AppStorage("log_Status") var logins = false
 
     
     // Loading ...
@@ -155,8 +158,10 @@ class ModelData : ObservableObject {
 //            // setting user status as true....
 //
             withAnimation{
-
+//                self.emails=self.email
+//                self.passwords=self.password
                 self.logOrSignup = true
+                self.logins = true
             }
         }
     }
@@ -217,7 +222,8 @@ class ModelData : ObservableObject {
 //            })
         
         withAnimation{
-
+//            self.emails=self.email
+//            self.passwords=self.password
             self.logOrSignup = true
         }
         }
@@ -230,7 +236,8 @@ class ModelData : ObservableObject {
         try! Auth.auth().signOut()
         
         withAnimation{
-            
+//            self.emails=""
+//            self.passwords=""
             self.status = false
             self.logOrSignup = false
         }

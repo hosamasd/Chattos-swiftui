@@ -14,6 +14,8 @@ struct PostRow: View {
     var post : PostModel
     @ObservedObject var postData : PostViewModel
     let uid = Auth.auth().currentUser!.uid
+    @AppStorage("change_user_profile") var isNewUrl = false
+    @AppStorage("url_new_user_profile") var newUrl = ""
     
     var body: some View {
         
@@ -22,7 +24,7 @@ struct PostRow: View {
             HStack(spacing: 10){
                 
 //                Image(systemName:"tray.and.arrow.down.fill")
-                WebImage(url: URL(string: post.user.pic)!)
+                WebImage(url: URL(string: isNewUrl ? newUrl :  post.user.pic)!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)

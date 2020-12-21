@@ -80,7 +80,7 @@ struct RegisterView: View {
             }
             else {
             
-                Button(action: registerData.register, label: {
+                Button(action: {registerData.register(email: "", password: "")}, label: {
                     Text("Register")
                         .foregroundColor(.white)
                         .fontWeight(.bold)

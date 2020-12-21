@@ -38,10 +38,10 @@ class SecondRegisterViewModel: ObservableObject {
                     self.ref.collection("Users").document(uid).setData([
         
                         "uid": uid,
-                        "imageurl": url,
+                        "pic": url,
                         "username": self.name,
                         "bio": self.bio,
-                        "dateCreated": Date()
+//                        "dateCreated": Date()
         
                     ]) { (err) in
         

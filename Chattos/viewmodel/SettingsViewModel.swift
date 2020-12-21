@@ -10,13 +10,15 @@ import Firebase
 
 class SettingsViewModel : ObservableObject{
     
-    @Published var userInfo = UserModel(username: "", pic: "", bio: "", id: "")
+    @Published var userInfo = UserModel(uid: "", username: "", pic: "", bio: "")
 //    @Published var userInfo = UserModel(username: "hosam mohamed", pic: "", bio: "ios developer", uid: "")
     //status for register
     @AppStorage("current_status") var status = false
     @AppStorage("log_Status") var logins = false
     @AppStorage("after_log_signuup") var logOrSignup = false
-    
+    @AppStorage("change_user_profile") var isNewUrl = false
+    @AppStorage("url_new_user_profile") var newUrl = ""
+
     // Image Picker For Updating Image...
     @Published var picker = false
     @Published var img_data = Data(count: 0)
@@ -45,6 +47,8 @@ class SettingsViewModel : ObservableObject{
         status = false
         logOrSignup=false
         logins=false
+        self.isNewUrl=false
+        self.newUrl=""
     }
 //
     func updateImage(){
@@ -55,7 +59,7 @@ class SettingsViewModel : ObservableObject{
 //
             self.ref.collection("Users").document(self.uid).updateData([
 
-                "imageurl": url,
+                "pic": url,
             ]) { (err) in
                 if err != nil{return}
 
@@ -63,6 +67,8 @@ class SettingsViewModel : ObservableObject{
                 self.isLoading = false
                 fetchUser(uid: self.uid) { (user) in
                     self.userInfo = user
+                    self.isNewUrl=true
+                    self.newUrl = url
                 }
             }
         }

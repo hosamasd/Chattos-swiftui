@@ -96,9 +96,9 @@ class UserViewModel: ObservableObject {
                     let bio = doc.document.data()["bio"] as! String
                     let uid = doc.document.documentID
                     
-                    let user = UserModel(username: username, pic: pic, bio: bio, id: uid)
-                    
-                    xx.append(user)
+//                    let user = UserModel(username: username, pic: pic, bio: bio, id: uid)
+//                    
+//                    xx.append(user)
                     
                     
                 }
@@ -113,6 +113,7 @@ class UserViewModel: ObservableObject {
         
         
     }
+  
     
     func makeSearch(txt:String) ->[MsgModel] {
         

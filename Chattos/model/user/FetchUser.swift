@@ -17,15 +17,15 @@ func fetchUser(uid: String,completion: @escaping (UserModel) -> Void){
     ref.collection("Users").document(uid).getDocument { (doc, err) in
         guard let user = doc else{return}
         
+        guard let dict = user.data() else{return}
         
-        
-        let username = user.data()?["username"] as! String
-        let pic = user.data()?["imageurl"] as! String
-        let bio = user.data()?["bio"] as! String
-        let uid = user.documentID
+//        let username = user.data()?["username"] as! String
+//        let pic = user.data()?["imageurl"] as! String
+//        let bio = user.data()?["bio"] as! String
+//        let uid = user.documentID
         
         DispatchQueue.main.async {
-            completion(UserModel(username: username, pic: pic, bio: bio, id: uid))
+            completion(UserModel(dict:dict ))
         }
     }
 }
@@ -42,12 +42,15 @@ func fetchAllUsers(completion: @escaping ([UserModel]) -> Void){
             // Checking If Doc Added...
             if doc.type == .added{
               
-                let username = doc.document.data()["username"] as! String
-                let pic = doc.document.data()["imageurl"] as! String
-                let bio = doc.document.data()["bio"] as! String
-                let uid = doc.document.documentID
+                 let dict = doc.document.data() 
+
                 
-                let user = UserModel(username: username, pic: pic, bio: bio, id: uid)
+//                let username = doc.document.data()["username"] as! String
+//                let pic = doc.document.data()["imageurl"] as! String
+//                let bio = doc.document.data()["bio"] as! String
+//                let uid = doc.document.documentID
+                
+                let user = UserModel(dict: dict)
                 
                 xx.append(user)
                 

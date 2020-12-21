@@ -15,3 +15,13 @@ struct PostModel : Identifiable {
     var time : Date
     var user: UserModel
 }
+
+struct PostModelllls : Identifiable {
+    
+    var id: Int
+    var title : String
+    var pic: String
+    var time : Date
+    var user: UserModel
+    var offset : CGFloat
+}

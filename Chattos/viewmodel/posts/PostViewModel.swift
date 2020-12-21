@@ -11,6 +11,8 @@ import Firebase
 class PostViewModel : ObservableObject{
     
     @Published var posts : [PostModel] = []
+    @Published var cursolPosts : [PostModelllls] = []
+
     @Published var noPosts = false
     @Published var newPost = false
     @Published var updateId = ""
@@ -23,6 +25,8 @@ class PostViewModel : ObservableObject{
 //
     func getAllPosts(){
 //
+        var xxxxx = 0
+        
         ref.collection("Posts").addSnapshotListener { (snap, err) in
             guard let docs = snap else{
                 self.noPosts = true
@@ -52,6 +56,7 @@ class PostViewModel : ObservableObject{
 
                     fetchUser(uid: userRef.documentID) { (user) in
 
+//                        self.cursolPosts.append(.init(id: xxxxx, title: title, pic: pic, time: time.dateValue(), user: user,offset: 0))
                         self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), user: user))
                         // Sorting All Model..
                         // you can also doi while reading docs...
@@ -59,6 +64,7 @@ class PostViewModel : ObservableObject{
                             return p1.time > p2.time
                         }
                     }
+//                    xxxxx += 1
                 }
 
                 // removing post when deleted...

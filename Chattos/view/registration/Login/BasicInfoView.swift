@@ -11,6 +11,8 @@ struct BasicInfoView: View {
     
     @StateObject var registerData = RegisterViewModel()
 
+     var email:String = ""
+     var password:String = ""
 //    @StateObject var registerData = SecondRegisterViewModel()
 
     func withFrame(isFrame: Bool = false) -> some View {
@@ -98,7 +100,7 @@ struct BasicInfoView: View {
                 }
                 .padding(.top)
                 
-                Button(action: registerData.register) {
+                Button(action:{ registerData.register(email: email, password: password) }) {
                     
                     Text("Confirm")
                         .fontWeight(.bold)
